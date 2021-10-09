@@ -6,9 +6,7 @@
 a{
     text-decoration:none;
 }
-
-/*------------------------------header-----------------------------*/
-
+/*------------------------------documento--------------------------------*/
 .padre{
     display: flex;
     flex-flow: column nowrap;
@@ -18,18 +16,22 @@ a{
 } 
  .header{
    background-color:hsl(356, 100%, 66%);
-   height: 400px;
+   height: 450px;
    border-radius: 0 0 0 70px;
  }
   .contenedor1{
-    background:url(/imagenes/bg-pattern-intro.svg);
-    background-position: 20% 51%;
+    background:url(../imagenes/bg-pattern-intro.svg);
+    background-position: 21% 50%;
     background-attachment: contain;
     background-repeat: no-repeat;
     background-size: 180%;
     display: flex;
     flex-flow: column nowrap;
-    height: 400px;
+    height: 450px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
   }
   .menu{
     display: flex;
@@ -38,51 +40,111 @@ a{
     align-items: center;
   }
    .logo{
-    /*flex:1 1 auto;*/
-    margin-left: 100px;
+    flex:1 1 auto;
+    margin-left: -165px;
+    margin-top: 75px;
    }
+   /*.......................menu de navegacion---------------------------*/
 .nav{
     flex: 30 auto;
-    margin-left: 30px;
-    
-    
+    margin-left: 90px;
+    position: relative;
+    margin-top: 75px;
 }
 /*-------------es aqui el cambio de los botones------------*/
 
- .nav li a {
-     color: #fff;
-     font-size: 17px;
-     padding-left: 16px;
-     letter-spacing: 3px;
-     font-family: 'Overpass', sans-serif;
-     float: left;
- }
- .nav a:hover{
-     border-bottom: 1px solid #fff;
-     transition: .3s;
- }
- ul{
-     list-style: none;
- }
+.principal{
+    height: 100%;
+    transition: transform .5s;
+    display: flex;
+}
+.item{
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    --clip: polygon(0 0, 100% 1%, 100% 0, 0 0);
+    --transform: rotate(0);
+}
+.item:hover{
+    --clip: polygon(0 0, 100% 1%, 100% 100%, 0% 100%);
+    --transform: rotate(-180deg);
+    overflow: visible;
+}
+.bot1{
+    color: #e6dddd;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 5px 20px;
+    display: flex;
+    height: 100%;
+    text-align: center;
+    font-family: 'Overpass', sans-serif;
+} 
+.bot1:hover{
+    color: #fff;
+    transition: .3s;
+    text-decoration: underline;
+}
+.flecha2{
+    color: #e6dddd;
+    transform: var(--transform);
+    transition: transform .3s;
+    height:10px;
+    margin-top: 6px;
+    margin-left: 3px;
+    display: block;
+}
+.flecha2:hover{
+    color: #fff;
+    transition: .3s;
+}
+.submenu{
+    list-style-type: none;
+    transition:clip-path .3s;
+    clip-path: var(--clip);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background: rgb(251, 249, 249);
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-top: -30px;
+}
+ul{
+    text-decoration: none;
+}
+.lista_inside{
+    font-family: 'Overpass', sans-serif;
+    padding: 100px 20px 100px 7px;
+    color: #141212;
+    text-decoration: none;
+}
+.aside a:hover{
+    font-weight: bold;
+}
 .registro{
     flex: 3 1 auto;
     display:flex; 
-    margin-right: 230px;
-    
-    float: left;
-        
+    margin-top: 70px;
+    padding-left: 400px;
 }
  .registro a{
-    color:#fff;
+    text-decoration: none;
+    color: #e6dddd;;
     font-size: 18px;
     padding-right: 25px; 
     font-family: 'Overpass', sans-serif;
  }
  .registro a:hover{
-    color: hsl(356, 100%, 66%);
-    transition: .3s;
+    color: #ffffff;
+    transition: .2s;
+    text-decoration: underline;
  }
  .inicio a{
+     text-decoration: none;
      border: 1px solid #bbb;
      padding: 10px 25px;
      color: hsl(356, 100%, 66%);
@@ -95,12 +157,34 @@ a{
      color: #f3f3f3;
      transition: .3s;
  }
+.icono{
+     display: none;
+     float: right;
+ }
+ .ham{
+     border:none;
+     cursor: pointer;
+     color: #fff;
+     width: 30px;
+     margin: 0;
+     padding: 0;
+     background-color: transparent;
+     display: none;
+ }
+ .ham span{
+     display: block;
+     background-color:#f3f3f3;
+     height: 3px;
+     width: 28px;
+     margin: 10px auto;
+     border-radius: 2px;
+ }
 
  /*------------------texto dentro del header---------------*/
 
 .texto{
     height:130px;
-    margin-top: -265px;
+    margin-top: -300px;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -112,6 +196,7 @@ h1{
 }
 .parrafo{
     color: #fff;
+    font-size: 19px;
     font-family: 'Overpass', sans-serif;
 }
 
@@ -121,8 +206,10 @@ h1{
     margin-top: 55px;
     margin-left: auto;
     margin-right: auto;
+    text-decoration: none;
 }
 .boton1{
+    text-decoration: none;
      border: 1px solid #bbb;
      padding: 10px 15px;
      color: hsl(356, 100%, 66%);
@@ -138,6 +225,7 @@ h1{
     transition: .3s;
 }
 .boton2{
+    text-decoration: none;
     border: 1px solid rgb(243, 232, 232);
     padding: 10px 15px;
     color: rgb(236, 234, 234);
@@ -152,7 +240,7 @@ h1{
     transition: .3s;
 }
 
-/*------------------editor--------------------*/
+                   /*------------------editor--------------------*/
 .titulo{
     text-align: center;
     color: hsl(208, 49%, 24%);
@@ -175,8 +263,7 @@ h1{
     margin-bottom: 100px;
 }
 .imagen1{
-    
-    background: url(/imagenes/illustration-editor-desktop.svg);
+    background: url(../imagenes/illustration-editor-desktop.svg);
     background-size: cover;
     background-position: 2%;
     background-repeat: no-repeat;
@@ -198,7 +285,7 @@ h3{
     font-family: 'Overpass', sans-serif;
     letter-spacing: 1px;
 }
-/*-------------------mobile------------------------*/
+               /*-------------------mobile------------------------*/
 
 .mobile{
     height: 300px;
@@ -227,15 +314,14 @@ h3{
     font-family: 'Overpass', sans-serif;
     padding-right: 100px;
     letter-spacing: 3px;
-    text-align: left;
-    
+    text-align: left; 
 }
 .celular{
     margin-top: -550px;
     padding-left: 60px;
     z-index: 1;
 }
-/*----------------------laptop-----------------------*/
+             /*----------------------laptop-----------------------*/
 
 .laptop{
     display:grid;;
@@ -243,7 +329,7 @@ h3{
     margin-bottom: 70px;
 }
 .imagen5{
-    background: url(/imagenes/illustration-laptop-desktop.svg);
+    background: url(../imagenes/illustration-laptop-desktop.svg);
     background-size: cover;
     background-position: 85% -30%;
     background-repeat: no-repeat;
@@ -267,7 +353,7 @@ h3{
     font-family: 'Overpass', sans-serif;
     letter-spacing: 1px;
 }
-/*---------------------footer-----------------------*/
+                 /*---------------------footer-----------------------*/
 .footer{
     width: 100%;
     height: 300px;
@@ -275,10 +361,8 @@ h3{
     border-radius: 0 70px 0 0;
     display:grid;
     grid-template-columns: 25% 25% 25% 25%;
-    
 }
 .logo2{
-    
         flex:1 1 auto;
         margin-left: 180px;
         margin-top: 60px;
@@ -292,6 +376,9 @@ h3{
     margin-top: 40px;
     padding: 50px 50px;
     width: 100%;
+}
+.lista_final{
+    list-style-type: none;
 }
 .producto{
     display: inline-block;
@@ -325,16 +412,272 @@ h4{
     font-size: 18px;
 }
 .listas li a{
-    text-decoration: none;
     color: hsl(240, 2%, 79%);
     font-family:'Overpass', sans-serif; 
-    margin:0px 5px;
 }
 .listas li a:hover{
     border-bottom: 1px solid #fff;
     transition: 0.3s;
 }
 
+                 /*-----------------------version moviles----------------------------*/
+
+@media screen and (max-width:800px){
+    .padre{
+        flex: 1 1 100%;
+        flex: wrap;
+    }
+    .header{
+        flex-direction: wrap;
+        height: 470px;
+    }
+    .contenedor1{
+        background:url(../imagenes/bg-pattern-intro.svg);
+        background-position: 30% 45%;
+        background-attachment: contain;
+        background-repeat: no-repeat;
+        background-size: 300%;
+        display: flex;
+        flex-flow: column nowrap;
+        height: 468px;
+      }
+    .logo{
+        margin-left: 230px;
+    }
+    .nav{
+        font-size: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: -70px;
+        padding: 25px 0;
+    }
+    .principal{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 92vh;
+        margin: 0;
+        padding: 0;
+        background: #bbb;
+      
+    }
+    .registro a{
+        font-size: 10px;
+        float: left;
+        
+    }
+    .ham{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+    }
+    .texto{
+        margin-top: -340px
+    }
+    h1{
+        font-size: 34px;
+        padding: 20px 20px;
+        font-family: 'Overpass', sans-serif;
+        text-align: center;
+    }
+    .parrafo{
+        font-size: 20px;
+        font-family: 'Overpass', sans-serif;
+    }
+    .botones{
+        margin-top: 15px;
+        display: block;
+    }
+    .boton1{
+        border: 1px solid #bbb;
+        padding: 10px 15px;
+        color: hsl(356, 100%, 66%);
+        background:#fff;
+        border-radius:30px;
+        font-size: 15px;
+        margin-right: 10px;
+        font-family: 'Overpass', sans-serif;
+   }
+   .boton1:hover{
+       background:transparent;
+       color: #f3f3f3;
+       transition: .3s;
+   }
+   .boton2{
+       border: 1px solid rgb(243, 232, 232);
+       padding: 10px 15px;
+       color: rgb(236, 234, 234);
+       background:transparent;
+       border-radius:30px;
+       font-size: 15px;
+       font-family: 'Overpass', sans-serif;
+   }
+   .boton2:hover{
+       background:rgb(255, 255, 255) ;
+       color: hsl(356, 100%, 66%);
+       transition: .3s;
+   }
+    .titulo{
+        text-align: center;
+        font-size: 18px;
+        padding-top: 90px;
+        padding-bottom: 50px;
+        font-family: 'Overpass', sans-serif;
+    }
+    .imagen1{
+        
+        background: url(../imagenes/illustration-editor-mobile.svg);
+        background-size: cover;
+        background-position: 20%;
+        background-repeat: no-repeat;
+        background-attachment: contain;
+        position: absolute;
+        flex-direction: wrap;
+        width: 90%;
+        margin-top: -20px ;
+        height: 300px;
+    ;
+    }
+    .editor{
+        display: flex;
+    }
+    h3{
+        font-size: 20px;
+        text-align: center;
+        margin-top: 30px;
+        
+    }
+    .parrafo1{
+        display: flex;
+        flex-direction: column;
+        font-size: 30px;
+        text-align: center;
+        width: 100%;
+        margin-top: 250px;
+        margin-right: 20px;
+    }
+    .parrafo2{
+        font-size: 12px;
+    } 
+    .celular img{
+        width: 100%;
+        height: 300px;
+        position: relative;
+        margin-left: -30px;
+        margin-top: -110px;
+    }
+    .aside{
+        text-align: center;
+        position: absolute;
+        font-size: 20px;
+        margin-top: 80px;
+    }
+    .titulo3{
+        font-size: 30px;
+        
+    }
+    .mobile{
+        background: hsl(237, 17%, 21%);
+        display:grid;
+        grid-template-columns: 200% 400%;
+        margin-bottom: 80px;
+        border-radius: 0 70px 0 70px;
+        overflow: hidden;
+        height: 450px;
+    }
+    .circulo{
+        margin-top: -250px;
+        margin-left: -96px;
+        height: 550px;
+    }
+    .parrafo3{
+       font-size: 13px;
+       letter-spacing: 3px;
+       margin-left: 55px;
+       text-align: center;
+       width: 100%;
+    }
+    .laptop{
+        display:flex;
+        flex-direction: column;
+        margin-bottom: 70px;
+    }
+    .imagen5{
+        background: url(../imagenes/illustration-laptop-mobile.svg);
+        background-size: cover;
+        background-position: 50% -30%;
+        background-repeat: no-repeat;
+        background-attachment: contain;
+        position: relative;
+        width: 100%;
+        margin-top: 330px;
+        height: 300px;
+    }
+    .parrafo4{
+        height: 450px;
+        width: 100%;
+        margin-left: 17px;
+        margin-top: -20px;
+        font-size: 25px;
+        text-align: center;
+    }
+    .poweful{
+        margin-top: -58px;
+    }
+    .footer{
+        width: 100%;
+        height: 800px;
+        display:block;
+    }
+    .logo2{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+    }
+    .listas{
+       display: inline;
+       margin-left: 60px;
+       width: 100%;
+       text-decoration: none;
+       list-style-type: none;
+    }
+    .producto{
+        display: inline;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 16px;
+    }
+    .compania{
+        display: inline;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 16px;
+    }
+    .conecta{
+        display: inline;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 16px;
+    }
+    h4{
+        color: #fff;
+        font-family: 'Overpass', sans-serif;
+        font-size: 18px;
+    }
+    .listas li a{
+        color: hsl(240, 2%, 79%);
+        font-family:'Overpass', sans-serif; 
+    }
+    .listas li a:hover{
+        border-bottom: 1px solid #fff;
+        transition: 0.3s;
+    }
+
+}
 
 
 
