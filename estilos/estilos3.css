@@ -1,210 +1,129 @@
-*{
-    margin:0px;
-    padding: 0px;
-    box-sizing:border-box;
-}
-a{
-    text-decoration:none;
-}
-/*------------------------------documento--------------------------------*/
-.padre{
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-    background: rgb(230, 227, 227);
-    
-} 
- .header{
-   background-color:hsl(356, 100%, 66%);
-   height: 450px;
-   border-radius: 0 0 0 70px;
- }
-  .contenedor1{
-    background:url(../imagenes/bg-pattern-intro.svg);
-    background-position: 21% 50%;
-    background-attachment: contain;
-    background-repeat: no-repeat;
-    background-size: 180%;
-    display: flex;
-    flex-flow: column nowrap;
-    height: 450px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .menu{
-    display: flex;
-    flex-flow:row nowrap;
-    height: 100px;
-    width: 100%;
-    align-items: center;
-  }
-   .logo{
-    flex:1 1 auto;
-    margin-left: -165px;
-    margin-top: 75px;
-   }
-   /*.......................menu de navegacion---------------------------*/
-.nav{
-    flex-direction: row;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    min-height: 8vh;
-    padding-top: 120px;
-    padding-bottom: 25px;
-    margin-right: -350px;
-    width: 1200px
-     /* flex: 30 auto;
-    margin-left: 90px;
-    position: relative;
-    margin-top: 75px;*/
-}
-/*-------------es aqui el cambio de los botones------------*/
 
-.principal{
-    height: 100%;
-    transition: transform .5s;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+.header{
+    width: 100%;
+    height: 500px;
+    border-radius: 0 0 0 70px;
+    background:hsl(356, 100%, 66%);
+}
+.logo-mobile{
+    margin-left: 150px;
+    margin-top: 10px;
+}
+/*-----------------------------------------------Imagen del Header-------------------------------------------------*/
+header nav{
+    padding-top: 70px;
     display: flex;
-    margin-left: -200px;
+    background: url(../imagenes/bg-pattern-intro.svg);
+    background-attachment: contain;
+    background-position: -170% 49%;
+    width: 100%;
+    height: 500px;
+    z-index: 1000;
+    /*margin: 20px auto;*/
 }
-.item{
+/*-----------------------------------------------Estilos a los enlaces---------------------------------------------*/
+header nav ul{
     list-style: none;
+    margin-top: 5px;
+    margin-left: 40px;
+}
+header nav ul li{
+    display: inline-block;
     position: relative;
-    overflow: hidden;
-    height: 100%;
-    --clip: polygon(0 0, 100% 1%, 100% 0, 0 0);
-    --transform: rotate(0);
-}
-.item:hover{
-    --clip: polygon(0 0, 100% 1%, 100% 100%, 0% 100%);
-    --transform: rotate(-180deg);
-    overflow: visible;
-}
-.bot1{
-    color: #e6dddd;
-    text-decoration: none;
     font-size: 17px;
     font-weight: bold;
-    padding: 5px 20px;
-    display: flex;
-    height: 100%;
-    text-align: center;
-    font-family: 'Overpass', sans-serif;
-} 
-.bot1:hover{
-    color: #fff;
-    transition: .3s;
+}
+header nav ul li a{
+    color: #e6dddd;
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    font-weight: bold;
+}
+header nav ul li a:hover{
     text-decoration: underline;
+    color: white;
+    transition: .3s;
+}
+.submenu:hover .arrow1{
+     transform: rotate(-180deg);
+}
+/*------------------------------------------------flechas 1 y 2-------------------------------------------------------*/
+.flecha1{
+    margin-left: 2px;
+}
+.arrow1{
+   transition: .4s;
 }
 .flecha2{
-    color: #e6dddd;
-    transform: var(--transform);
-    transition: transform .3s;
-    height:10px;
-    margin-top: 6px;
-    margin-left: 3px;
-    display: block;
+    display: none;
 }
-.flecha2:hover{
-    color: #fff;
-    transition: .3s;
-}
-.submenu{
-    list-style-type: none;
-    transition:clip-path .3s;
-    clip-path: var(--clip);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: max-content;
-    transform: translateY(100%);
-    background: rgb(251, 249, 249);
-    border-radius: 5px;
-    padding: 10px 10px;
-    margin-top: -30px;
-}
-ul{
+/*-----------------------------------------------------Submenu------------------------------------------------------*/
+.children li{
     text-decoration: none;
+    color: rgb(3, 3, 3);
+    width: 100%;
+    padding-bottom: 15px;
 }
-.lista_inside{
-    font-family: 'Overpass', sans-serif;
-    padding: 100px 20px 100px 7px;
-    color: #141212;
-    text-decoration: none;
-}
-.aside a:hover{
+.children li:hover{
+    text-decoration: underline;
+    background: transparent;
     font-weight: bold;
+}
+/*-------------------------------------------------Caja del submenu-------------------------------------------------*/
+header nav ul li .children{
+    display: none;
+    background: rgb(243, 243, 243);
+    position: absolute;
+    margin-left: auto;
+    text-align: center;
+    width: 150%;
+    margin-top: -7px;
+    margin-left: -25px;
+    border-radius: 15px;
+}
+header nav ul li:hover .children{
+    display: block;
+    cursor: pointer;
+}
+/*-----------------------------------------------Botones de la derecha----------------------------------------------*/
+.inicio{
+    margin-left: 520px;
+    font-weight: bold;
+    font-size: 17px;
+}
+.inicio a{
+    color: #e6dddd;
 }
 .registro{
-    text-decoration: none;
-    margin:0 0 0 300px;
-    list-style-type: none;
-    margin-top: 13px;
-    font-family: 'Overpass', sans-serif;
+    margin-left: 20px;
+    padding: 0px 15px;
+    border-radius: 30px;
+    background: rgb(251, 239, 239);
 }
-.login{
-    background: transparent;
-    color: #e6dddd;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-}
-.login:hover{
-    text-decoration: underline;
-    color: #f3f3f3;
-}
-.inicio{
-   margin-left: 45px;
-   list-style-type: none;
-   background: rgb(232, 232, 236);
-   border-radius: 90px;
-   padding: 10px 10px;
-   font-family: 'Overpass', sans-serif;
-   overflow: hidden;
-}
-.inicio:hover{
-    transition: .3s;
+.registro:hover{
     background: hsl(355, 100%, 74%);
-}
-.inicio a:hover{
     transition: .3s;
-    color: #fff;
 }
-.signup{
-    padding: 20px 20px;
-    text-decoration: none;
+.registro a{
     color: hsl(353, 100%, 62%);
-    margin-top: 10px;
-    font-size: 18px;
     font-weight: bold;
 }
-.icono{
-     display: none;
-     float: right;
- }
- .ham{
-     border:none;
-     cursor: pointer;
-     color: #fff;
-     width: 30px;
-     margin: 0;
-     padding: 0;
-     background-color: transparent;
-     display: none;
- }
- .ham span{
-     display: block;
-     background-color:#f3f3f3;
-     height: 3px;
-     width: 28px;
-     margin: 10px auto;
-     border-radius: 2px;
- }
-
- /*------------------texto dentro del header---------------*/
-
+.registro a:hover{
+    text-decoration: none;
+}
+.ham{
+    padding-left: 20px;
+    padding-top: 20px;
+    display: none;
+}
+/*-----------------------------------------------Texto dentro del Header--------------------------------------------*/
 .texto{
     height:130px;
     margin-top: -300px;
@@ -222,9 +141,7 @@ h1{
     font-size: 19px;
     font-family: 'Overpass', sans-serif;
 }
-
-/*----------------------botones--------------------*/
-
+/*--------------------------------------------Botones dentro del Header---------------------------------------------*/
 .botones{
     margin-top: 55px;
     margin-left: auto;
@@ -263,16 +180,16 @@ h1{
     color: hsl(353, 100%, 62%);
     transition: .3s;
 }
-
-                   /*------------------editor--------------------*/
+/*---------------------------------------------------Titulo-------------------------------------------------------*/
 .titulo{
-    text-align: center;
-    color: hsl(208, 49%, 24%);
-    font-size: 30px;
-    padding-top: 80px;
-    padding-bottom: 50px;
-    font-family: 'Overpass', sans-serif;
+        text-align: center;
+        color: hsl(208, 49%, 24%);
+        font-size: 30px;
+        padding-top: 80px;
+        padding-bottom: 50px;
+        font-family: 'Overpass', sans-serif;
 }
+/*----------------------------------------------------Editor-------------------------------------------------------*/
 .editor{
     display:grid;;
     grid-template-columns: 65% 35%;
@@ -285,6 +202,12 @@ h1{
     padding-right: 15%;
     font-size: 20px;
     margin-bottom: 100px;
+}
+.parrafo2{
+    color:hsl(207, 13%, 34%);
+    font-size: 16px;
+    font-family: 'Overpass', sans-serif;
+    letter-spacing: 1px;
 }
 .imagen1{
     background: url(../imagenes/illustration-editor-desktop.svg);
@@ -303,15 +226,8 @@ h3{
     font-size: 30px;
     font-family:'Overpass', sans-serif;
 }
-.parrafo2{
-    color:hsl(207, 13%, 34%);
-    font-size: 16px;
-    font-family: 'Overpass', sans-serif;
-    letter-spacing: 1px;
-}
-               /*-------------------mobile------------------------*/
-
-.mobile{
+/*-----------------------------------------------------mobile-------------------------------------------------------*/
+.mobile2{
     height: 300px;
     background: hsl(237, 17%, 21%);
     display:grid;
@@ -345,8 +261,7 @@ h3{
     padding-left: 60px;
     z-index: 1;
 }
-             /*----------------------laptop-----------------------*/
-
+/*--------------------------------------------------Laptop-------------------------------------------------------*/
 .laptop{
     display:grid;;
     grid-template-columns: 40% 60%;
@@ -377,19 +292,19 @@ h3{
     font-family: 'Overpass', sans-serif;
     letter-spacing: 1px;
 }
-                 /*---------------------footer-----------------------*/
+/*--------------------------------------------------Footer--------------------------------------------------------*/
 .footer{
     width: 100%;
-    height: 300px;
+    height: 350px;
     background: hsl(240, 10%, 16%);
     border-radius: 0 70px 0 0;
     display:grid;
     grid-template-columns: 25% 25% 25% 25%;
 }
 .logo2{
-        flex:1 1 auto;
-        margin-left: 180px;
-        margin-top: 60px;
+    flex:1 1 auto;
+    margin-left: 180px;
+    margin-top: 60px;
 }
 .listas{
     display: flex;
@@ -436,6 +351,7 @@ h4{
     font-size: 18px;
 }
 .listas li a{
+    text-decoration: none;
     color: hsl(240, 2%, 79%);
     font-family:'Overpass', sans-serif; 
 }
@@ -443,199 +359,158 @@ h4{
     border-bottom: 1px solid #fff;
     transition: 0.3s;
 }
-
-                 /*-----------------------version moviles----------------------------*/
-
-@media screen and (max-width:800px){
-    .padre{
-        flex: 1 1 100%;
-        flex: wrap;
-    }
-    .header{
-        flex-direction: wrap;
-        height: 470px;
-    }
-    .contenedor1{
-        background:url(../imagenes/bg-pattern-intro.svg);
-        background-position: 30% 45%;
-        background-attachment: contain;
-        background-repeat: no-repeat;
-        background-size: 300%;
-        display: flex;
-        flex-flow: column nowrap;
-        height: 468px;
-      }
-    .logo{
-        margin-left: 30px;
-        z-index: 1;
-    }
-    .nav{
-        display: flex;
-        justify-content: space-around;
-        min-height: 8vh;
-        font-size: 1.4rem;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 250px;
-        padding-bottom: 25px;
-
-        /* ---------estilos actualizados----------*/
-        width: 100vw;
-        position: absolute;
-        z-index: 20;
-        display: flex;
-        justify-content: center;
-       /* margin-top: 250px;
-        font-size: 10px;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: -150px;
-        padding: 25px 0;
-        width: 95%;*/
-    }
-    /*.principal{
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: auto;
-        margin: 0;
-        padding: 0;
-        background: #bbb;
-        display: flex;
-    }*/
-    .principal-activado{
-        display: flex;
-        margin-top: 250px;
-        background: rgb(197, 81, 81);
-        width: 95%;
-        border-radius: 1rem;
-        flex-direction: column;
-        z-index:2;
-        top: 11rem;
-        padding-bottom: 1.5rem;
-        background: rgb(236, 236, 241);
-        /*display: none;*/
-    }
-    .item{
-        padding: 20px 20px;
-        margin: 0 auto;
-       
-    }
-    .bot1{
-        color: rgb(31, 29, 29);
-    }
-    .bot1:hover{
-        color: black;
-        text-decoration: underline;
-        transition: .4s;
-    }
-    .submenu{
-        list-style-type: none;
-        transition: clip-path .3s;
-        clip-path: var(--clip);
-        position: relative;
-        transform:translateY(100%);
-        background: rgb(214, 208, 208);
-        border-radius: 5px;
-        margin-top: -140px;
-        width: 100%;
-    }
-    .lista_inside{
-        width: 90%;
-        margin: center;
-      
-    }
-    .inicio{
-        width: 40%;
-        text-align: center;
-        margin: 0 auto;
-        background: hsl(355, 100%, 74%);
-    }
-    .inicio:hover{
-        border: 1px solid #f3f3f3;
-    }
-    .signup{
-        color: #f3f3f3;
-    }
-    .registro{
-        margin: 0 auto;
-        margin-bottom: 20px;
-    }
-    .login{
-        color: rgb(31, 29, 29);
-    }
-    .login:hover{
-        color: rgb(12, 11, 11);
-        text-decoration: underline;
-        transition: .4s;
+/*-------------------------------------------------Version MOBILE--------------------------------------------------*/
+@media screen and (max-width: 375px){
+    
+    .logo-mobile{
+        margin-left: 40px;
+        margin-bottom: 30px;
     }
     .ham{
+        margin-top: -85px;
+        z-index: 20;
+        margin-left: 270px;
+        width: 100%;
         display: block;
         position: absolute;
-        margin-top: 65px;
-        right: 25px;
+    }
+    .ham:hover{
+        cursor: pointer;
+    }
+    header nav{
+     width: 98%;
+     height: 500px;
+     display: block;
+     background-position: -253% 32%;
+     background-size: 330%;
+     border-radius: 0 0 0 70px;
+     margin-left: auto;
+     margin-right: auto;
+     justify-content: center;
+    }
+    header nav ul li{
+        display: block;
+    }
+    header nav ul li a{
+        color: black;
+    }
+    header nav ul li a:hover{
+        color: rgb(68, 64, 64);
+        text-decoration: none;
+    }
+    /*-------------------------------------------Flechas 1 y 2 mobile----------------------------------------------*/
+    .flecha1{
+        display: none;
+    }
+    .flecha2{
+        display: inline-block;
+    }
+    .arrow2{
+        transform: rotate(-180deg);
+    }
+    .lista-mobile{
+        margin-left: -30px;
+    }
+    .submenu{
+        margin-left: -30px;
+    }
+    /*-------------------------------------------SUBMENU Mobile--------------------------------------------*/
+    header nav ul li .children{
+        width: 95%;
+        position: relative;
+        background: rgb(228, 220, 220);
+        text-align: center;
+        margin-left: 4px;
+        margin-top: -7px;
+        border-radius: 15px;
+        display: block;
+    }
+    .children li{
+        text-decoration: none;
+        color: rgb(71, 66, 66);
+        padding-bottom: 10px;
+    }
+    .children li:hover{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+    /*--------------------------------------------NAV Mobile-----------------------------------------------*/
+    .menu-mobile{
+        display: none;
+        text-align: center;
+        width: 95%;
+        position: relative;
+        padding-bottom: 30px;
+        margin-left: 10px;
+        background:rgb(245, 246, 246);
+        border-radius: 7px;
+        box-shadow: rgb(97, 96, 96) 0 10px 10px 0px;
+    }
+    .menu-mobile.activado{
+       display: block;
+    }
+    .inicio{
+        font-weight: bold;
+        font-size: 17px;
+        margin-left: -40px;
+    }
+    .inicio a{
+        color: black;
+    }
+    .registro{
+        margin-left: 55px;
+        padding: 0 10px;
+        background: hsl(353, 100%, 62%);
+        width: 50%;
+    }
+    .registro:hover{
+        background:hsl(355, 100%, 74%);
+    }
+    .registro a{
+        color: rgb(251, 239, 239);
+    }
+    .registro a:hover{
+        color: #f3f3f3;
     }
     .texto{
         margin-top: -340px
     }
     h1{
-        font-size: 34px;
+        font-size: 36px;
         padding: 20px 20px;
         font-family: 'Overpass', sans-serif;
         text-align: center;
     }
     .parrafo{
-        font-size: 20px;
+        width: 80%;
+        margin: -15px auto;
+        font-size: 17px;
         font-family: 'Overpass', sans-serif;
     }
     .botones{
-        margin-top: 15px;
+        margin-top: 55px;
         display: block;
     }
-    .boton1{
-        padding: 10px 15px;
-        color: hsl(355, 100%, 74%);
-        background:#fff;
-        border-radius:30px;
-        font-size: 15px;
-        margin-right: 10px;
-        font-family: 'Overpass', sans-serif;
-   }
-   .boton1:hover{
-       background:hsl(355, 100%, 74%);
-       color: #f3f3f3;
-       transition: .3s;
-   }
-   .boton2{
-       border: 1px solid rgb(243, 232, 232);
-       padding: 10px 15px;
-       color: rgb(236, 234, 234);
-       background:transparent;
-       border-radius:30px;
-       font-size: 15px;
-       font-family: 'Overpass', sans-serif;
-   }
-   .boton2:hover{
-       background:rgb(255, 255, 255) ;
-       color: hsl(355, 100%, 74%);
-       transition: .3s;
-   }
+    /*--------------------------------------------Titulo Mobile-------------------------------------------------*/
     .titulo{
         text-align: center;
+        color: hsl(208, 49%, 24%);
         font-size: 18px;
         padding-top: 70px;
         padding-bottom: 50px;
         font-family: 'Overpass', sans-serif;
     }
+    /*-----------------------------------------------Editor Mobile-------------------------------------------------*/
     .imagen1{
         background: url(../imagenes/illustration-editor-mobile.svg);
         background-size: cover;
-        background-position: 20%;
+        background-position: 29%;
         background-repeat: no-repeat;
         background-attachment: contain;
         position: absolute;
         flex-direction: wrap;
-        width: 100%;
+        width: 95%;
         margin-top: -10px ;
         height: 340px;
     }
@@ -659,13 +534,14 @@ h4{
     .parrafo2{
         font-size: 12px;
         margin-top: 20px;
-    } 
+    }
+    /*----------------------------------------------Celular Mobile--------------------------------------------------*/
     .celular img{
         width: 100%;
-        height: 300px;
+        height: 280px;
         position: relative;
         margin-left: -30px;
-        margin-top: -100px;
+        margin-top: -80px;
     }
     .aside{
         text-align: center;
@@ -691,7 +567,7 @@ h4{
     .parrafo3{
         font-size: 60px;
     }
-    .mobile{
+    .mobile2{
         background: hsl(237, 17%, 21%);
         display:grid;
         grid-template-columns: 0% 100%;
@@ -712,10 +588,11 @@ h4{
        text-align: center;
        width: 100%;
     }
+/*-----------------------------------------------Laptop Mobile-----------------------------------------------------*/
     .laptop{
-        display:flex;
-        flex-direction: column;
-        margin-bottom: 70px;
+       display:flex;
+       flex-direction: column;
+       margin-bottom: 70px;
     }
     .imagen5{
         background: url(../imagenes/illustration-laptop-mobile.svg);
@@ -737,27 +614,29 @@ h4{
         text-align: center;
     }
     .poweful{
-        margin-top: -58px;
+        margin-top: -68px;
     }
+/*--------------------------------------------------Footer Mobile------------------------------------------------*/
     .footer{
         width: 100%;
         height: 800px;
+        padding-top: 10px;
         display:block;
     }
     .logo2{
         margin-left: auto;
         margin-right: auto;
-        margin-top: 60px;
+        margin-top: 70px;
         width: 80px;
         height: 80px;
         display: flex;
     }
     .listas{
-       display: inline;
-       margin-left: 60px;
-       width: 100%;
-       text-decoration: none;
-       list-style-type: none;
+        display: inline;
+        margin-left: 60px;
+        width: 100%;
+        text-decoration: none;
+        list-style-type: none;
     }
     .producto{
         display: inline;
@@ -792,10 +671,3 @@ h4{
     }
 
 }
-
-
-
-
-
-
-

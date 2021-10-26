@@ -12,47 +12,29 @@
     <title>Reto 3</title>
 </head>
 <body>
- <div class="padre">
-    <header class="header">
-        <div class="contenedor1">
-           <div class="menu">
-              <div class="logo">
-                   <img class="img" src="imagenes/logo.svg" alt="">
-              </div>
-              <div class="nav">
-                <ul class="principal-activado">
-                <li class="item">
-                    <a class="bot1" href="#">Product</a>
-                </li>
-                <li class="item">
-                    <a class="bot1" href="#">Company</a>
-                </li">
-                <li class="item">
-                    <a class="bot1" href="#">Connect <img class="flecha2" src="imagenes/icon-arrow-light.svg" alt=""></a>
-                    <ul class="submenu">
-                        <li class="aside">
-                            <a class="lista_inside" href="#">Contact<!-- a cada boton le agregare una flecha roja con la clase flecha1 y la desaparecere en el css y la aparecere en la media--></a>
-                        </li>
-                        <li class="aside">
-                            <a class="lista_inside" href="#">Newsletter</a>
-                        </li>
-                        <li class="aside">
-                            <a class="lista_inside" href="#">Likedln</a>
-                        </li>
-                    </ul>
-                    <li class="registro">
-                        <a class="login" href="#">Login</a>
-                    </li>
-                    <li class="inicio">
-                        <a class="signup" href="#">Sign Up</a>
-                    </li>
-                </li>
-                </ul>
-              </div>
-              <a class="ham" href=""><img src="imagenes/icon-hamburger.svg" alt=""></a>
-           </div> 
-        </div>
-        <div class="texto">
+   <div class="padre">
+       <header class="header">
+            <nav class="navbar">
+                <div class="logo-mobile"> <img src="imagenes/logo.svg" alt=""></div>
+                <div class="ham" id="ham"><img class="hamburguesa" src="imagenes/icon-hamburger.svg" alt=""></div>
+               <div class="menu-mobile" id="menu-mobile">
+                   <ul class="mobile" id="mobile">
+                       <li class="lista-mobile" id="lista-mobile"><a href="#">Product <span class="flecha1"><img src="imagenes/icon-arrow-light.svg" alt=""></span><span class="flecha2"><img src="imagenes/icon-arrow-dark.svg" alt=""></span></a></li>
+                       <li class="lista-mobile" id="lista-mobile"><a href="#">Company <span class="flecha1"><img src="imagenes/icon-arrow-light.svg" alt=""></span><span class="flecha2"><img src="imagenes/icon-arrow-dark.svg" alt=""></span></a></li>
+                       <li class="submenu" id="submenu"><a href="#">Connect <span class="flecha1"><img class="arrow1" src="imagenes/icon-arrow-light.svg" alt=""></span><span class="flecha2"><img class="arrow2"src="imagenes/icon-arrow-dark.svg" alt=""></span></a>
+                     <ul class="children" id="children">
+                          <li class="item-submenu" id="item-submenu"><a href="#"></a>Contact</li>
+                          <li class="item-submenu" id="item-submenu"><a href="#"></a>Newsletter</li>
+                          <li class="item-submenu" id="item-submenu"><a href="#"></a>Likedln</li>
+                      </ul>
+                       </li>
+                       <li class="lista-mobile inicio"><a href="#">Login</a></li>
+                       <li class="lista-mobile registro"><a href="#">Sign Up</a></li>
+                   </ul>
+               </div>
+              
+           </nav>
+         <div class="texto">
             <h1>
                 A modern publishing platform
             </h1>
@@ -62,97 +44,93 @@
             <div class="botones">
                 <a class="boton1" href="#">Star For Free</a>
                 <a class="boton2" href="#">Learn More</a>
-            </div>
+             </div>
          </div>
-       </header>
+    </header>
        <div class="titulo">
-               <h2 class="title">Designed for the future</h2>
+          <h2 class="title">Designed for the future</h2>
        </div>
        <div class="editor">
-            <div class="parrafo1">
-                <h3>Introducing an extensible editor</h3>
-                <br>
-                <p class="parrafo2">Blogr features an exceedingly intuituve interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,videos,and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.</p>
-                <br>
-                <br>
-                <h3>Robust content management</h3>
-                <br>
-                <p class="parrafo2">Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories,sections,format ,of flow. With this funcionality, you're in full control.</p>
-            </div>
-            <div class="imagen1"></div>
+           <div class="parrafo1">
+            <h3>Introducing an extensible editor</h3>
+            <br>
+            <p class="parrafo2">Blogr features an exceedingly intuituve interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,videos,and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.</p>
+            <br>
+            <br>
+            <h3>Robust content management</h3>
+            <br>
+            <p class="parrafo2">Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories,sections,format ,of flow. With this funcionality, you're in full control.</p>
+           </div>
+           <div class="imagen1"></div>
        </div>
-       <div class="mobile">
-           <div class="imagen3">
-               <img class="circulo"src="imagenes/bg-pattern-circles.svg" alt="">
-           </div>  
-           <div class="state">
-            <h3 class="titulo3">State of the Art Infrastructure</h3>
-            <br>
-            <p class="parrafo3">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
-           </div>        
+       <div class="mobile2">
+          <div class="imagen3">
+             <img class="circulo"src="imagenes/bg-pattern-circles.svg" alt="">
+          </div>  
+          <div class="state">
+             <h3 class="titulo3">State of the Art Infrastructure</h3>
+              <br>
+             <p class="parrafo3">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
+          </div>        
        </div>
-       <div class="celular">
-           <img src="imagenes/illustration-phones.svg" alt="">
-       </div>
-       <div class="laptop">
-           <div class="imagen5"></div>
-         <div class="parrafo4">
-            <h3>Free,open, simple</h3>
-            <br>
-            <p class="parrafo5">Blogr is a free and open source application backed be a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with GoogleAnalitics. The architecture is clean and is relatively easy to learn. </p>
-            <br>
-            <br>
-            <div class="poweful">
-                <h3>Powerful tooling</h3>
-                <br>
-                <p class="parrafo5">Batteries included. We built a simple and straightforward CLI tool that makes costomization and deployment a breeze, but capable of producing even the most complicated sites.</p>
-            </div>
-        </div>
-      </div>
-      <div class="footer">
-             <img class="logo2"src="imagenes/logo.svg" alt="">
-             <div class="listas">
-                <div class="producto">
-                    <h4>Product</h4>
-                    <br>
-                    <br>
-                    <ul class="lista_final">
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Marketplace</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Integrations</a></li>
-                    </ul>
-                </div>
-                <div class="compania">
-                   <h4>Company</h4>
-                   <br>
-                   <br>
-                   <ul class="lista_final">
-                       <li><a href="#">About</a></li>
-                       <li><a href="#">Team</a></li>
-                       <li><a href="#">Blog</a></li>
-                       <li><a href="#">Careers</a></li>
-                   </ul>
-               </div>
-               <div class="conecta">
-                   <h4>Connect</h4>
-                   <br>
-                   <br>
-                   <ul class="lista_final">
-                       <li><a href="#">Contact</a></li>
-                       <li><a href="#">Newsletter</a></li>
-                       <li><a href="#">Likedln</a></li>
-                   </ul>
-               </div>
+         <div class="celular">
+            <img src="imagenes/illustration-phones.svg" alt="">
+         </div>
+         <div class="laptop">
+            <div class="imagen5"></div>
+          <div class="parrafo4">
+             <h3>Free,open, simple</h3>
+             <br>
+             <p class="parrafo5">Blogr is a free and open source application backed be a large community of helpful developers. It supports features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works seamlessly with GoogleAnalitics. The architecture is clean and is relatively easy to learn. </p>
+             <br>
+             <br>
+             <div class="poweful">
+                 <h3>Powerful tooling</h3>
+                 <br>
+                 <p class="parrafo5">Batteries included. We built a simple and straightforward CLI tool that makes costomization and deployment a breeze, but capable of producing even the most complicated sites.</p>
              </div>
-             
+         </div>
+       </div>
+       <div class="footer">
+        <img class="logo2"src="imagenes/logo.svg" alt="">
+        <div class="listas">
+           <div class="producto">
+               <h4>Product</h4>
+               <br>
+               <br>
+               <ul class="lista_final">
+                   <li><a href="#">Overview</a></li>
+                   <li><a href="#">Pricing</a></li>
+                   <li><a href="#">Marketplace</a></li>
+                   <li><a href="#">Features</a></li>
+                   <li><a href="#">Integrations</a></li>
+               </ul>
+           </div>
+           <div class="compania">
+              <h4>Company</h4>
+              <br>
+              <br>
+              <ul class="lista_final">
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Careers</a></li>
+              </ul>
+          </div>
+          <div class="conecta">
+              <h4>Connect</h4>
+              <br>
+              <br>
+              <ul class="lista_final">
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Newsletter</a></li>
+                  <li><a href="#">Likedln</a></li>
+              </ul>
+          </div>
+        </div>
       </div>
 
 </div>
-
+   <script src="lenguaje/lenguaje.js"></script>
 </body>
 </html>
-<script src="lenguaje/lenguaje.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
